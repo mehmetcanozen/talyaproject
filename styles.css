@@ -1,159 +1,209 @@
-* {
+/* styles.css */
+
+/* === Theme Colors === */
+:root {
+    --bg: #0d1117;
+    --card-bg: rgba(255, 255, 255, 0.04);
+    --text: #c9d1d9;
+    --accent: #58a6ff;
+    --accent-alt: #ff79c6;
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --font: 'Poppins', sans-serif;
+  }
+  
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  body {
+    background: var(--bg);
+    font-family: var(--font);
+    color: var(--text);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-}
-
-.container {
-    text-align: center;
-    max-width: 800px;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* === Container === */
+  .container {
+    background: var(--card-bg);
     border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.profile-section {
+    padding: 2rem;
+    width: 100%;
+    max-width: 750px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    animation: fadeIn 0.8s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* === Header === */
+  .profile {
+    text-align: center;
     margin-bottom: 2rem;
-}
-
-.profile-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+  }
+  
+  .avatar {
+    width: 90px;
+    height: 90px;
+    font-size: 2.5rem;
     margin: 0 auto 1rem;
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
-    font-weight: bold;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px var(--accent-alt);
     animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
+  }
+  
+  @keyframes pulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(45deg, #fff, #f0f0f0);
+    50% { transform: scale(1.08); }
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  h1 span {
+    background: linear-gradient(45deg, var(--accent), var(--accent-alt));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.description {
-    font-size: 1.1rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+  
+  /* === Intro === */
+  .intro {
+    font-size: 1.05rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    opacity: 0.85;
     line-height: 1.6;
-    margin-bottom: 2rem;
-    opacity: 0.8;
-}
-
-.links {
+  }
+  
+  /* === Projects === */
+  .projects h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: var(--accent);
+  }
+  
+  .project-list {
     display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+  }
+  
+  .project-card {
+    display: flex;
+    align-items: center;
     gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
-
-.link-btn {
-    padding: 12px 24px;
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-    color: white;
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 1rem 1.2rem;
     text-decoration: none;
-    border-radius: 25px;
-    font-weight: 600;
+    color: var(--text);
+    min-width: 260px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.link-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.github-btn {
-    background: linear-gradient(45deg, #333, #666);
-}
-
-.live-btn {
-    background: linear-gradient(45deg, #4CAF50, #45a049);
-}
-
-.skills {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-}
-
-.skill-tag {
-    padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    font-size: 0.9rem;
-    backdrop-filter: blur(5px);
-}
-
-.footer {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
+  }
+  
+  .project-card .icon {
+    font-size: 1.6rem;
+    color: var(--accent);
+  }
+  
+  .project-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .project-card p {
     font-size: 0.9rem;
     opacity: 0.7;
-}
-
-@media (max-width: 600px) {
-    .container {
-        margin: 1rem;
-        padding: 1.5rem;
+  }
+  
+  /* === Skills === */
+  .skills {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .skills h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: var(--accent);
+  }
+  
+  .skill-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .skill-tags span {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(4px);
+  }
+  
+  /* === Footer === */
+  .footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.6;
+  }
+  
+  /* === Responsive === */
+  @media (max-width: 600px) {
+    .project-card {
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 100%;
     }
-
+  
+    .avatar {
+      width: 70px;
+      height: 70px;
+      font-size: 2rem;
+    }
+  
     h1 {
-        font-size: 2rem;
+      font-size: 1.6rem;
     }
-
-    .links {
-        flex-direction: column;
-        align-items: center;
+  
+    .intro {
+      font-size: 0.95rem;
     }
-
-    .link-btn {
-        width: 200px;
-    }
-} 
+  }  

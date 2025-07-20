@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoş Geldiniz - Talya Projesi</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mehmet Can Özen | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-...your-integrity..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <div class="container">
-        <div class="profile-section">
-            <div class="profile-image">👋</div>
-            <h1>Hoş Geldiniz!</h1>
-            <p class="subtitle">Talya Staj Projesi</p>
-        </div>
+  <div class="container">
+    <header class="profile">
+      <div class="avatar">👋</div>
+      <h1>Merhaba, ben <span>Mehmet Can Özen</span></h1>
+      <p class="subtitle">Talya Staj Projesi Intern</p>
+    </header>
 
-        <p class="description">
-            Merhaba! Ben Mehmet Can Özen ve Talya'da staj yapıyorum. 
-        </p>
+    <p class="intro">
+      Talya'daki stajım boyunca çeşitli projeler geliştirdim. Aşağıda örneklerini bulabilirsiniz.
+    </p>
 
-        <div class="links">
-            <a href="https://github.com/mehmetcanozen/talyaproject" class="link-btn github-btn" target="_blank">
-                📁 GitHub Repo
-            </a>
-            <a href="https://mehmetcanozen.github.io/talyaproject/" class="link-btn live-btn" target="_blank">
-                🌐 Canlı Demo
-            </a>
-        </div>
+    <section class="projects">
+      <h2>Projelerim</h2>
+      <div class="project-list">
+        <a href="https://github.com/mehmetcanozen/minilink"
+           class="project-card" target="_blank">
+          <div class="icon"><i class="fas fa-link"></i></div>
+          <div class="info">
+            <h3>minilink</h3>
+            <p>URL Shortener</p>
+          </div>
+        </a>
+        <a href="https://github.com/mehmetcanozen/stayscraper"
+           class="project-card" target="_blank">
+          <div class="icon"><i class="fas fa-scroll"></i></div>
+          <div class="info">
+            <h3>stayscraper</h3>
+            <p>Web Scraper</p>
+          </div>
+        </a>
+      </div>
+    </section>
 
-        <div class="skills">
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">Angular.js</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Git</span>
-        </div>
+    <section class="skills">
+      <h2>Teknolojiler</h2>
+      <div class="skill-tags">
+        <span>HTML</span><span>CSS</span><span>TypeScript</span>
+        <span>Angular.js</span><span>Node.js</span><span>Git</span>
+      </div>
+    </section>
 
-        <div class="footer">
-            <p>© 2024 Talya Staj Projesi - Tüm hakları saklıdır.</p>
-        </div>
-    </div>
+    <footer class="footer">
+      <p>© 2024 Mehmet Can Özen – Tüm hakları saklıdır.</p>
+    </footer>
+  </div>
 </body>
-</html> 
+</html>
